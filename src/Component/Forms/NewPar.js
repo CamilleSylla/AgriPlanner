@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./AddPar.scss";
+import "./NewForm.scss";
 
-export default function AddPar() {
+
+export default function NewPar() {
   const [newPar, setNewPar] = useState({ clientId: "1" });
 
   const onParChange = (e) => {
@@ -16,6 +17,8 @@ export default function AddPar() {
 
   return (
     <div className="CrudContainer">
+      <h1>Parcelle</h1>
+      
       <input
         type="text"
         name="name"

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function AddLeg() {
+export default function NewLeg() {
   const [newLeg, setNewLeg] = useState({ clientId: "1" });
   const [vari, setVari] = useState([]);
 
   const onParChange = (e) => {
-    setNewLeg({ ...newLeg, [e.target.name]: e.target.value });
+    setNewLeg({ ...newLeg, [e.target.name]: e.target.value, variete: vari });
     console.log(newLeg);
   };
 
@@ -25,6 +25,7 @@ export default function AddLeg() {
 
   return (
     <div className="CrudContainer">
+      <h1>Legume</h1>
       <input
         type="text"
         name="name"
@@ -55,6 +56,13 @@ export default function AddLeg() {
           placeholder="Temps de culture"
           onChange={onParChange}
         />
+        <input
+          type="number"
+          name="fenetre"
+          min="0"
+          placeholder="Fenetre de récolte"
+          onChange={onParChange}
+        />
         <div>
           <input
             type="text"
@@ -64,8 +72,8 @@ export default function AddLeg() {
           />
           <button onClick={addNewVar}>Ajouté</button>
         </div>
-        <label for="color">Caractéristique</label>
-        <input type="color" name="color" onChange={onParChange}/>
+        <label for="color">Couleur</label>
+        <input type="color" name="color" onChange={onParChange} />
       </div>
 
       <button onClick={onValidate}>Validé</button>
