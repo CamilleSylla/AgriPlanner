@@ -4,6 +4,7 @@ import Select from "@material-ui/core/Select";
 import axios from "axios";
 import { LegumeContext } from "../../Context/LegumeContext";
 import { ParcelleContext } from "../../Context/ParcelleContext";
+import { Ps } from "../../utils";
 
 export default function NewCult() {
   const [newCult, setNewCult] = useState({ clientId: "1" });
@@ -15,7 +16,6 @@ export default function NewCult() {
     setNewCult({ ...newCult, [e.target.name]: e.target.value });
     
   };
-
   function onValidate() {
     axios.post("/api/newCult", newCult).then((res) => console.log(res));
     console.log(newCult);
@@ -71,7 +71,7 @@ export default function NewCult() {
           return <MenuItem value={details.name}>{details.name}</MenuItem>;
         })}
       </Select>
-
+        
       <label for="length">Organisation</label>
       <div>
         <input

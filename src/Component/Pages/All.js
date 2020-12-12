@@ -5,6 +5,8 @@ import NewPar from "../Forms/NewPar";
 import ListCult from "../List/ListCult";
 import ListLeg from "../List/ListLeg";
 import ListPar from "../List/ListPar";
+import ParOcc from "../ParcelleData/ParOcc";
+import ParSurf from "../ParcelleData/ParSurf";
 
 export default function All() {
   return (
@@ -15,6 +17,8 @@ export default function All() {
       <ListPar />
       <ListLeg />
       <ListCult />
+      <ParSurf/>
+      <ParOcc/>
     </div>
   );
 }
