@@ -9,7 +9,7 @@ export default function ParOcc() {
   
 
   const calc = cult.map((size, i) => {
-    const occupied = ((size.rowLength*size.rowWidth)*size.rowNum ) + ((size.rowLength*size.spaceBet)*size.rowNum)
+    const occupied = Math.round((((size.rowLength*size.rowWidth)*size.rowNum ) + ((size.rowLength*size.spaceBet)*size.rowNum))*100) /100
     const parData = parcelle.filter(par => par.name === size.parcelle)
     const parTot = parData.map((data,i) => data.length*data.width)
     const per = Math.round((occupied/parTot)*100)

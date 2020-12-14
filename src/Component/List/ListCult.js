@@ -1,10 +1,14 @@
 import React, { useContext } from "react";
 import { CultContext } from "../../Context/CultContext";
 
-export default function ListCult() {
-  const [cult, setCult] = useContext(CultContext)
-  
+import Delete from "../../assets/icons/delete.svg";
+import Edit from "../../assets/icons/edit.svg";
+import { Del } from "../../utils";
 
+export default function ListCult() {
+  const [cult, setCult] = useContext(CultContext);
+
+  
   return (
     <div className="listContainer">
       <h2>Liste Cultures</h2>
@@ -24,6 +28,8 @@ export default function ListCult() {
           <th>Longueur d'une planche</th>
           <th>Largeur d'une planche</th>
           <th>Espacement entre les planche</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
         </tr>
         {cult.map((details, i) => {
           return (
@@ -44,6 +50,12 @@ export default function ListCult() {
               <th>{details.rowLength}</th>
               <th>{details.rowWidth}</th>
               <th>{details.spaceBet}</th>
+              <th>
+                <input type="image" src={Edit} />
+              </th>
+              <th>
+                <input type="image" src={Delete} id={details._id} value="cult" onClick={Del}/>
+              </th>
             </tr>
           );
         })}
