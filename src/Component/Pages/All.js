@@ -10,6 +10,8 @@ import ParOcc from "../ParcelleData/ParOcc";
 import ParSurf from "../ParcelleData/ParSurf";
 import PlanCalc from "../Forms/plancheCalc"
 import Modify from "../Modal/Modify/Modify";
+import RecettePar from "../Economics/RecettePar";
+import Recette from "../Economics/Recette";
 
 export default function All() {
   return (
@@ -25,6 +27,8 @@ export default function All() {
       <Calendar/>
       <PlanCalc/>
       <Modify/>
+      <Recette/>
+      <RecettePar/>
     </div>
   );
 }

@@ -25,15 +25,16 @@ export default function NewLeg() {
 
   return (
     <div className="CrudContainer">
+      <div className="crudItems">
       <h1>Legume</h1>
+      
+      <div>
       <input
         type="text"
         name="name"
-        placeholder="Nom de la parcelle"
+        placeholder="Nom du Produit"
         onChange={onParChange}
       />
-      <label for="length">Caractéristique</label>
-      <div>
         <input
           type="number"
           name="price"
@@ -45,7 +46,7 @@ export default function NewLeg() {
         <input
           type="text"
           name="unit"
-          placeholder="unité de mesure"
+          placeholder="Unité de mesure"
           onChange={onParChange}
         />
         <input
@@ -74,9 +75,12 @@ export default function NewLeg() {
         </div>
         <label for="color">Couleur</label>
         <input type="color" name="color" onChange={onParChange} />
+        <button onClick={onValidate}>Validé</button>
       </div>
 
-      <button onClick={onValidate}>Validé</button>
+      
+      </div>
+      
     </div>
   );
 }

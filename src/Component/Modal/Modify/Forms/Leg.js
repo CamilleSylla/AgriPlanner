@@ -11,8 +11,12 @@ export default function Leg({ details }) {
   const onParChange = (e) => {
     setModifyCult({ ...modifyCult, [e.target.name]: e.target.value });
   };
-  const modifyValidation = async () => {
-    await Axios.patch("/api/legume/update", {
+  const modifyValidation =  () => {
+    console.log(modifyCult);
+
+      setModifyCult({...modifyCult, variete: vari})
+      
+ Axios.patch("/api/legume/update", {
       ...modifyCult,
     }).then((res) => console.log(res));
   };
@@ -22,8 +26,11 @@ export default function Leg({ details }) {
     value.value = "";
   };
   const removeVari = (e) => {
-      delete vari[e.target.value]
-      console.log(vari);
+      const index = vari.indexOf(e.target.value)
+      if (index > -1) {
+          vari.splice(index, 1)
+      }
+      
   }
 
   return (
@@ -31,7 +38,7 @@ export default function Leg({ details }) {
       <input
         type="text"
         name="name"
-        placeholder="Nom de la parcelle"
+        placeholder={"Nom du produit : " + details.name}
         onChange={onParChange}
       />
       <label for="length">Caractéristique</label>
@@ -71,7 +78,7 @@ export default function Leg({ details }) {
         {vari.map((variete, i) => {
           return (<table>
 <th>{variete}</th>
-<th><input type="image" src={Delete} value={i} onClick={removeVari}/></th>
+<th><input type="image" src={Delete} value={variete} onClick={removeVari}/></th>
           </table>)
         })}
 

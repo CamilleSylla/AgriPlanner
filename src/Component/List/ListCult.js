@@ -18,6 +18,7 @@ export default function ListCult() {
           <th>Couleur</th>
           <th>Legume</th>
           <th>Variete</th>
+          <th>Quantité</th>
           <th>Prix</th>
           <th>Unité de mesure</th>
           <th>Temps de culture</th>
@@ -40,6 +41,7 @@ export default function ListCult() {
               </th>
               <th>{details.legume}</th>
               <th>{details.variete}</th>
+              <th>{details.quantity}</th>
               <th>{details.price}</th>
               <th>{details.unit}</th>
               <th>{details.growLength}</th>

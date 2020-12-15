@@ -32,9 +32,9 @@ export default function ListLeg() {
                 <input type="color" value={details.color} />
               </th>
               <th>{details.name}</th>
-              <th>
+              <th className="varieteList">
                 {details.variete.map((vari, i) => {
-                  return <li>{vari}</li>;
+                  return <div><li>{vari}</li></div>;
                 })}
               </th>
               <th>{details.price + "€"}</th>
