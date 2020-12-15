@@ -5,10 +5,11 @@ import Delete from "../../assets/icons/delete.svg";
 import Edit from "../../assets/icons/edit.svg";
 
 import "./List.scss";
+import { ModalContext } from "../../Context/ModalContext";
 
 export default function ListPar() {
   const [parcelle, setParcelle] = useContext(ParcelleContext);
-
+  const [modal, setModal] = useContext(ModalContext)
   return (
     <div className="listContainer">
       <h2>Liste Parcelle</h2>
@@ -29,7 +30,7 @@ export default function ListPar() {
               <th>{details.width}</th>
               <th>{details.surface}</th>
               <th>
-                <input type="image" src={Edit} />
+                <input type="image" src={Edit} onClick={() => setModal({...modal, show: true, target: "Par", details: details})} />
               </th>
               <th>
                 <input

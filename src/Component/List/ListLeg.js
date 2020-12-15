@@ -3,9 +3,11 @@ import { LegumeContext } from "../../Context/LegumeContext";
 import Delete from "../../assets/icons/delete.svg";
 import Edit from "../../assets/icons/edit.svg";
 import { Del } from "../../utils";
+import { ModalContext } from "../../Context/ModalContext";
 
 export default function ListLeg() {
   const [legume, setLegume] = useContext(LegumeContext);
+  const [modal, setModal] = useContext(ModalContext)
   console.log(legume);
 
   return (
@@ -40,7 +42,7 @@ export default function ListLeg() {
               <th>{details.growLength}</th>
               <th>{details.fenetre}</th>
               <th>
-                <input type="image" src={Edit} />
+                <input type="image" src={Edit} onClick={() => setModal({...modal, show: true, target: "Leg", details: details})}/>
               </th>
               <th>
                 <input

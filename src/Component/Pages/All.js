@@ -9,6 +9,7 @@ import ListPar from "../List/ListPar";
 import ParOcc from "../ParcelleData/ParOcc";
 import ParSurf from "../ParcelleData/ParSurf";
 import PlanCalc from "../Forms/plancheCalc"
+import Modify from "../Modal/Modify/Modify";
 
 export default function All() {
   return (
@@ -23,6 +24,7 @@ export default function All() {
       <ParOcc/>
       <Calendar/>
       <PlanCalc/>
+      <Modify/>
     </div>
   );
 }

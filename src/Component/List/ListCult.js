@@ -4,10 +4,11 @@ import { CultContext } from "../../Context/CultContext";
 import Delete from "../../assets/icons/delete.svg";
 import Edit from "../../assets/icons/edit.svg";
 import { Del } from "../../utils";
+import { ModalContext } from "../../Context/ModalContext";
 
 export default function ListCult() {
   const [cult, setCult] = useContext(CultContext);
-
+  const [modal, setModal] = useContext(ModalContext)
   
   return (
     <div className="listContainer">
@@ -51,7 +52,7 @@ export default function ListCult() {
               <th>{details.rowWidth}</th>
               <th>{details.spaceBet}</th>
               <th>
-                <input type="image" src={Edit} />
+                <input type="image" src={Edit} onClick={() => setModal({...modal, show: true, target: "Cult", details: details})}/>
               </th>
               <th>
                 <input type="image" src={Delete} id={details._id} value="cult" onClick={Del}/>
