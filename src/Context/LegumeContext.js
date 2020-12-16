@@ -4,7 +4,7 @@ import React, { useState, createContext, useEffect } from 'react';
 export const LegumeContext = createContext();
 
 export function LegumeProvider(props) {
-    const [legume, setLegume] = useState();
+    const [legume, setLegume] = useState([]);
     useEffect(() => {
         Axios.get(`/api/Legume`)
             .then(res => {setLegume(res.data)})

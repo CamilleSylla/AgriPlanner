@@ -1,24 +1,21 @@
 #createNav {
-    width: 100vw;
+    position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    
     nav {
+        width: 100%;
+        top: 0;
         display: flex;
-        width: 50%;
-        justify-content: space-between;
         list-style: none;
-        li {
-            cursor: pointer;
-        }
+        justify-content: space-between;
     }
-}
-#create {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    min-height: 60vh;
+    #create {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
 }

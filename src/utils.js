@@ -1,20 +1,44 @@
+import { MenuItem } from "@material-ui/core";
 import Axios from "axios";
 
 export function Ps (itemLength,itemWidth) {
     return itemLength*itemWidth
 }
 
-export function pS (plancheL, plancheW) {
-    return plancheL*plancheW
+export function plancheCalc (data) {
+  const Sp = data.lengthP*data.widthP
+  const Sr = data.widthP*data.spaceRow
+  const Npl = Sp/Sr
+  const Qpl =  data.quantity/data.row
+  const R = Qpl/Npl
+  const round = Math.round(R * 100 )/100
+  console.log(Sp/Sr);
+  return round
 }
 
-export function pSE (plancheL, plancheEsp) {
-    return plancheL*plancheEsp
+// CRUD data management and opération
+export function Variete(user, Legume, acc, set, setAcc) {
+  if (user.legume) {
+    const find = Legume.find((legume) => legume.name === user.legume);
+    if (find && acc === 0) {
+      set({
+        ...user,
+        price: find.price,
+        unit: find.unit,
+        growLength: find.growLength,
+        color: find.color,
+        fenetre: find.fenetre,
+      });
+      setAcc(1);
+    }
+    const vari = find.variete.map((details, i) => {
+      return <MenuItem value={details}>{details}</MenuItem>;
+    });
+    return vari;
+  } else {
+    return <MenuItem>rien</MenuItem>;
+  }
 }
-export function pST (Ps, coef ) {
-    return Ps*coef
-}
-
 //CRUD Request
 
 export const Del = (e) => {
@@ -24,3 +48,4 @@ export const Del = (e) => {
       }
     );
   };
+

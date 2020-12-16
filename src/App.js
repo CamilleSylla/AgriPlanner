@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { LegumeProvider } from "./Context/LegumeContext";
 import { Route, Link } from "react-router-dom";
 import All from "./Component/Pages/All";

@@ -30,6 +30,8 @@ export default function ListCult() {
           <th>Longueur d'une planche</th>
           <th>Largeur d'une planche</th>
           <th>Espacement entre les planche</th>
+          <th>Quantité par rangs</th>
+          <th>espace entre les rangs</th>
           <th>Modifier</th>
           <th>Supprimer</th>
         </tr>
@@ -50,9 +52,11 @@ export default function ListCult() {
               <th>{details.swag}</th>
               <th>{details.parcelle}</th>
               <th>{details.rowNum}</th>
-              <th>{details.rowLength}</th>
-              <th>{details.rowWidth}</th>
-              <th>{details.spaceBet}</th>
+              <th>{details.lengthP}</th>
+              <th>{details.widthP}</th>
+              <th>{details.spaceP}</th>
+              <th>{details.row}</th>
+              <th>{details.spaceRow}</th>
               <th>
                 <input type="image" src={Edit} onClick={() => setModal({...modal, show: true, target: "Cult", details: details})}/>
               </th>

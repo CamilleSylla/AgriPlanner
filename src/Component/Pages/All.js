@@ -16,12 +16,6 @@ import Recette from "../Economics/Recette";
 export default function All() {
   return (
     <div>
-      <NewPar />
-      <NewLeg />
-      <NewCult />
-      <ListPar />
-      <ListLeg />
-      <ListCult />
       <ParSurf/>
       <ParOcc/>
       <Calendar/>
