@@ -28,12 +28,6 @@ export default function Calendar() {
     groups: Parcelle,
   });
 
-//   const userClick = (e) => {
-//     const choice = [Parcelle, Legume];
-//     console.log(choice[parseInt(e.target.value)]);
-//     setSelection({ ...selection, groups: choice[parseInt(e.target.value)] });
-//   };
-
   const items = cult.map((item, i) => {
     const dateString = item.start;
     const items = {

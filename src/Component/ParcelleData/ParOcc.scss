@@ -1,0 +1,27 @@
+.occContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2%;
+    .cardOcc {
+        text-align: left;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        border-radius: 20px;
+            p {
+                width: 100%;
+                margin: 0;
+            }
+            h3{
+                margin: 0;
+            }
+            .cardPercent {
+                display: flex;
+                justify-self: center;
+                align-items: center;
+            }
+
+    }
+    
+}

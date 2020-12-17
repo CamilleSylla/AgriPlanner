@@ -10,6 +10,8 @@ export default function ListCult() {
   const [cult, setCult] = useContext(CultContext);
   const [modal, setModal] = useContext(ModalContext)
   
+  console.log(cult);
+
   return (
     <div className="listContainer">
       <h2>Liste Cultures</h2>
@@ -51,7 +53,7 @@ export default function ListCult() {
               <th>{details.start}</th>
               <th>{details.swag}</th>
               <th>{details.parcelle}</th>
-              <th>{details.rowNum}</th>
+              <th>{details.numberP}</th>
               <th>{details.lengthP}</th>
               <th>{details.widthP}</th>
               <th>{details.spaceP}</th>

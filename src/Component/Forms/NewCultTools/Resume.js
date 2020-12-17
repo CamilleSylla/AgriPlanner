@@ -14,6 +14,7 @@ export default function Resume ({data, validate }) {
           <h3>Planches</h3>
           <p>Longeur : <span>{data.lengthP}</span>m</p>
           <p>Largeur : <span>{data.widthP}</span>m</p>
+          <p>espacement entre les planches : <span>{data.spaceP}</span>m</p>
           <p>Rangs : <span>{data.row}</span></p>
           <p>Espacement entre les rangs : <span>{data.spaceRow}</span>m</p>
           <p>Nombre de planches : <span>{data.numberP}</span></p>

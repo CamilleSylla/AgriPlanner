@@ -22,6 +22,7 @@ export default function Forms({ onChange, data, setData }) {
     });
     vari = Variete(data, legume, acc, setData, setAcc);
   } 
+  console.log(data);
   return (
     <div className="createFroms">
       <div>
