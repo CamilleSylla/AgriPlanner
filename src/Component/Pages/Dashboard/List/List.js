@@ -9,7 +9,7 @@ export default function List() {
   function Show() {
     if (show === "Cult") {
       return <ListCult />;
-    } else if (show === "Par") {
+    } else if (show === "Leg") {
       return <ListLeg />;
     } else {
       return <ListPar />;

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Forms from "./NewLegTools.js/Forms";
+import Resume from "./NewLegTools.js/Resume";
 
 export default function NewLeg() {
-  const [newLeg, setNewLeg] = useState({ clientId: "1" });
+  const [newLeg, setNewLeg] = useState({ clientId: "1", variete: [] });
   const [vari, setVari] = useState([]);
 
   const onParChange = (e) => {
@@ -25,62 +27,11 @@ export default function NewLeg() {
 
   return (
     <div className="CrudContainer">
-      <div className="crudItems">
       <h1>Legume</h1>
-      
-      <div>
-      <input
-        type="text"
-        name="name"
-        placeholder="Nom du Produit"
-        onChange={onParChange}
-      />
-        <input
-          type="number"
-          name="price"
-          min="0"
-          max="100"
-          placeholder="Prix unitaire"
-          onChange={onParChange}
-        />
-        <input
-          type="text"
-          name="unit"
-          placeholder="Unité de mesure"
-          onChange={onParChange}
-        />
-        <input
-          type="number"
-          name="growLength"
-          min="1"
-          max="100"
-          placeholder="Temps de culture"
-          onChange={onParChange}
-        />
-        <input
-          type="number"
-          name="fenetre"
-          min="0"
-          placeholder="Fenetre de récolte"
-          onChange={onParChange}
-        />
-        <div>
-          <input
-            type="text"
-            id="variete"
-            name="variete"
-            placeholder="Variété"
-          />
-          <button onClick={addNewVar}>Ajouté</button>
-        </div>
-        <label for="color">Couleur</label>
-        <input type="color" name="color" onChange={onParChange} />
-        <button onClick={onValidate}>Validé</button>
+      <div className="crudItems">
+        <Forms onChange={onParChange} addNewVar={addNewVar}  />
+        <Resume onValidate={onValidate} data={newLeg} vari={vari}/>
       </div>
-
-      
-      </div>
-      
     </div>
   );
 }

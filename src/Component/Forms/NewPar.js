@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./NewForm.scss";
+import Forms from "./NewParTools/Forms";
+import Resume from "./NewParTools/Resume";
 
 export default function NewPar() {
   const [newPar, setNewPar] = useState({ clientId: "1" });
@@ -16,44 +18,10 @@ export default function NewPar() {
 
   return (
     <div className="CrudContainer">
+      <h1>Parcelle</h1>
       <div className="crudItems">
-        <h1>Parcelle</h1>
-
-        <div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Nom de la parcelle"
-            onChange={onParChange}
-          />
-          <input
-            type="number"
-            name="length"
-            min="1"
-            max="100"
-            placeholder="Longueur"
-            onChange={onParChange}
-          />
-          <input
-            type="number"
-            name="width"
-            min="1"
-            max="100"
-            placeholder="Largeur"
-            onChange={onParChange}
-          />
-          <input
-            type="number"
-            name="surface"
-            min="1"
-            max="100"
-            placeholder="Surface en M²"
-            onChange={onParChange}
-          />
-          <button onClick={onValidate}>Validé</button>
-        </div>
-
-        
+         <Forms data={newPar} onChange={onParChange}/>
+         <Resume data={newPar} onValidate={onValidate}/>
       </div>
     </div>
   );

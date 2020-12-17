@@ -1,11 +1,12 @@
 import React from 'react'
 
-export default function Resume ({data, validate}) {
+export default function Resume ({data, validate }) {
 
 
     return (
         <div className="resume">
-          <h1>{data.legume}</h1>
+            <h1>Resumé</h1>
+          <h2>{data.legume}</h2>
           <h3>{data.variete}</h3>
           <p>Parcelle : <span>{data.parcelle}</span></p>
           <p>Quantité : <span>{data.quantity}</span></p>
