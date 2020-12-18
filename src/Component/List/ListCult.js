@@ -22,6 +22,7 @@ export default function ListCult() {
           <th>Variete</th>
           <th>Quantité</th>
           <th>Prix</th>
+          <th>Prévision du CA</th>
           <th>Unité de mesure</th>
           <th>Temps de culture</th>
           <th>Fénêtre de récolte</th>
@@ -47,6 +48,7 @@ export default function ListCult() {
               <th>{details.variete}</th>
               <th>{details.quantity}</th>
               <th>{details.price}</th>
+              <th>{details.quantity*details.price}</th>
               <th>{details.unit}</th>
               <th>{details.growLength}</th>
               <th>{details.fenetre}</th>
